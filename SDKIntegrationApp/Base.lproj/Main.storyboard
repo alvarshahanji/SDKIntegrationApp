@@ -75,6 +75,9 @@
                                 <state key="normal" title="LoadRewarded">
                                     <color key="titleColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadRewardedAd:" destination="Zt2-GG-MEc" eventType="touchUpInside" id="bsB-tS-NDd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amr-BY-YTA">
                                 <rect key="frame" x="97" y="467" width="180" height="31"/>
@@ -83,11 +86,17 @@
                                 <state key="normal" title="ShowRewarded">
                                     <color key="titleColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="showRewardedAd:" destination="Zt2-GG-MEc" eventType="touchUpInside" id="FN9-a0-0fp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="WQL-6r-ID6"/>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Fuo-J5-JMb" id="PSt-EC-aFb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7V-3H-CTi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,6 +167,9 @@
                                 <state key="normal" title="LoadBanner">
                                     <color key="titleColor" white="1" alpha="0.60000002379999995" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadBannerAd:" destination="h6u-UF-a1W" eventType="touchUpInside" id="ISc-vI-9NS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

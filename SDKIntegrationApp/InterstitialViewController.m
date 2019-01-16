@@ -9,6 +9,9 @@
 #import "InterstitialViewController.h"
 #import <AppLovinSDK/AppLovinSDK.h>
 
+static NSString *const kInterstitialZone1 = @"16a1c141f35bd64d";
+static NSString *const kInterstitialZone2 = @"58132605377038a3";
+
 @interface InterstitialViewController ()<ALAdLoadDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 @property (nonatomic, strong) ALAd *ad;
 @property (nonatomic, strong) ALInterstitialAd *interstitialAd;
@@ -44,9 +47,9 @@
     // Load an interstitial ad and be notified when the ad request is finished.
     //    [[ALSdk shared].adService loadNextAd: [ALAdSize sizeInterstitial] andNotify: self];
     if (self.segmentedControl.selectedSegmentIndex == 0) {
-        [[ALSdk shared].adService loadNextAdForZoneIdentifier: @"7f97ef8fe4cee84b" andNotify: self];
+        [[ALSdk shared].adService loadNextAdForZoneIdentifier: kInterstitialZone1 andNotify: self];
     } else if (self.segmentedControl.selectedSegmentIndex == 1){
-        [[ALSdk shared].adService loadNextAdForZoneIdentifier: @"744ce718b78c6a9f" andNotify: self];
+        [[ALSdk shared].adService loadNextAdForZoneIdentifier: kInterstitialZone1 andNotify: self];
     }
 }
 
@@ -61,16 +64,44 @@
 - (void)adService:(nonnull ALAdService *)adService didLoadAd:(nonnull ALAd *)ad
 {
     self.ad = ad;
-    // We now have an interstitial ad we can show!
-    NSLog(@"Ola! No error");
     
+    NSLog(@"%s with ZoneId : %@", __PRETTY_FUNCTION__,ad.zoneIdentifier);
+    [self popUpWithMessage:[NSString stringWithFormat:@"%s with ZoneId : %@",_cmd,ad.zoneIdentifier]];
 }
 
 - (void)adService:(nonnull ALAdService *)adService didFailToLoadAdWithError:(int)code
 {
-    NSLog(@"here we are : %d",code);
-    // Look at ALErrorCodes.h for the list of error codes.
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [self popUpWithMessage:[NSString stringWithFormat:@"%s with error code: %d ",_cmd,code]];
 }
+
+#pragma mark - Ad Display Delegate
+
+- (void)ad:(ALAd *)ad wasDisplayedIn:(UIView *)view
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view
+{
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+#pragma mark - Ad Video Playback Delegate
+
+- (void)videoPlaybackBeganInAd:(ALAd *)ad {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
+    NSLog(@"%s atPlaybackPercent:%d", __PRETTY_FUNCTION__,percentPlayed);
+}
+
 
 
 /*
@@ -88,5 +119,20 @@
 - (IBAction)showInterstitial:(id)sender {
     [self showInterstitialAd];
 }
+-(void) popUpWithMessage :(NSString *)msg{
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Event"
+                                 message:msg
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"Ok"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                               }];
+    
+    [alert addAction:okButton];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 @end
