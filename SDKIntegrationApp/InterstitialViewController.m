@@ -9,12 +9,16 @@
 #import "InterstitialViewController.h"
 #import <AppLovinSDK/AppLovinSDK.h>
 
-static NSString *const kInterstitialZone1 = @"16a1c141f35bd64d";
-static NSString *const kInterstitialZone2 = @"58132605377038a3";
+static NSString *const kInterstitialZone1 = @"INTER_1";
+static NSString *const kInterstitialZone2 = @"INTER_1";
 
+/*
 @interface InterstitialViewController ()<ALAdLoadDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 @property (nonatomic, strong) ALAd *ad;
 @property (nonatomic, strong) ALInterstitialAd *interstitialAd;
+*/
+@interface InterstitialViewController ()<MAAdDelegate>
+@property (nonatomic, strong) MAInterstitialAd *interstitialAd;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 
@@ -24,11 +28,15 @@ static NSString *const kInterstitialZone2 = @"58132605377038a3";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+/*
     self.interstitialAd = [[ALInterstitialAd alloc] initWithSdk: [ALSdk shared]];
     
     // Optional: Assign delegates
     self.interstitialAd.adDisplayDelegate = self;
     self.interstitialAd.adVideoPlaybackDelegate = self;
+*/
+    self.interstitialAd = [[MAInterstitialAd alloc] initWithAdUnitIdentifier: kInterstitialZone1];
+    self.interstitialAd.delegate = self;
 
     // Do any additional setup after loading the view.
 }
@@ -46,19 +54,28 @@ static NSString *const kInterstitialZone2 = @"58132605377038a3";
 {
     // Load an interstitial ad and be notified when the ad request is finished.
     //    [[ALSdk shared].adService loadNextAd: [ALAdSize sizeInterstitial] andNotify: self];
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
+   /* if (self.segmentedControl.selectedSegmentIndex == 0) {
         [[ALSdk shared].adService loadNextAdForZoneIdentifier: kInterstitialZone1 andNotify: self];
     } else if (self.segmentedControl.selectedSegmentIndex == 1){
         [[ALSdk shared].adService loadNextAdForZoneIdentifier: kInterstitialZone1 andNotify: self];
     }
+    */
+    [self.interstitialAd loadAd];
+
 }
 
 - (void)showInterstitialAd
 {
     // Load an interstitial ad and be notified when the ad request is finished.
-    [self.interstitialAd showOver: [UIApplication sharedApplication].keyWindow andRender: self.ad];
+//    [self.interstitialAd showOver: [UIApplication sharedApplication].keyWindow andRender: self.ad];
+    if ( [self.interstitialAd isReady] )
+    {
+        [self.interstitialAd showAd];
+    }
+
 }
 
+/*
 #pragma mark - Ad Load Delegate
 
 - (void)adService:(nonnull ALAdService *)adService didLoadAd:(nonnull ALAd *)ad
@@ -101,8 +118,36 @@ static NSString *const kInterstitialZone2 = @"58132605377038a3";
 - (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
     NSLog(@"%s atPlaybackPercent:%d", __PRETTY_FUNCTION__,percentPlayed);
 }
+*/
+#pragma mark - MAAdDelegate Protocol
 
+- (void)didLoadAd:(MAAd *)ad
+{
+}
 
+- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode
+{
+    // Interstitial ad failed to load. We recommend re-trying the load in 5 seconds
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self.interstitialAd loadAd];
+    });
+}
+
+- (void)didDisplayAd:(MAAd *)ad {}
+
+- (void)didClickAd:(MAAd *)ad {}
+
+- (void)didHideAd:(MAAd *)ad
+{
+    // Interstitial ad is hidden. Pre-load the next ad
+    [self.interstitialAd loadAd];
+}
+
+- (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode
+{
+    // Interstitial ad failed to display. We recommend loading the next ad
+    [self.interstitialAd loadAd];
+}
 
 /*
  #pragma mark - Navigation

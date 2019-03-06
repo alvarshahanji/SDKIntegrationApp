@@ -17,7 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [ALSdk initializeSdk];
+    [[ALSdk shared] initializeSdkWithCompletionHandler:^(ALSdkConfiguration *configuration) {
+        // AppLovin SDK is initialized, start loading ads
+    }];
     // Override point for customization after application launch.
     return YES;
 }

@@ -9,13 +9,18 @@
 #import "RewardedViewController.h"
 #import <AppLovinSDK/AppLovinSDK.h>
 
-static NSString *const kRewardedZone1 = @"16a1c141f35bd64d";
-static NSString *const kRewardedZone2 = @"58132605377038a3";
+static NSString *const kRewardedZone1 = @"IOS_REWARDED_AD_UNIT_ID";
+static NSString *const kRewardedZone2 = @"IOS_REWARDED_AD_UNIT_ID";
 
-@interface RewardedViewController ()<ALAdLoadDelegate, ALAdRewardDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
-//@property (nonatomic, strong) ALAd *ad;
-@property (nonatomic, strong) ALIncentivizedInterstitialAd *incentivizedInterstitialZone1;
-@property (nonatomic, strong) ALIncentivizedInterstitialAd *incentivizedInterstitialZone2;
+//@interface RewardedViewController ()<ALAdLoadDelegate, ALAdRewardDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
+////@property (nonatomic, strong) ALAd *ad;
+//@property (nonatomic, strong) ALIncentivizedInterstitialAd *incentivizedInterstitialZone1;
+//@property (nonatomic, strong) ALIncentivizedInterstitialAd *incentivizedInterstitialZone2;
+//@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+//@end
+
+@interface RewardedViewController()<MARewardedAdDelegate>
+@property (nonatomic, strong) MARewardedAd *rewardedAd;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 @end
 
@@ -27,7 +32,7 @@ static NSString *const kRewardedZone2 = @"58132605377038a3";
 
 - (void)loadRewardedAd
 {
-    if (self.segmentedControl.selectedSegmentIndex == 0) {
+   /* if (self.segmentedControl.selectedSegmentIndex == 0) {
         self.incentivizedInterstitialZone1 = [[ALIncentivizedInterstitialAd alloc] initWithZoneIdentifier: kRewardedZone1];
         [ALIncentivizedInterstitialAd setUserIdentifier: @"DEMO_USER_IDENTIFIER"];
         [self.incentivizedInterstitialZone1 preloadAndNotify: self];
@@ -36,10 +41,25 @@ static NSString *const kRewardedZone2 = @"58132605377038a3";
         [ALIncentivizedInterstitialAd setUserIdentifier: @"DEMO_USER_IDENTIFIER"];
         [self.incentivizedInterstitialZone2 preloadAndNotify:self];
     }
+    */
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
+        self.rewardedAd = [MARewardedAd sharedWithAdUnitIdentifier: kRewardedZone1];
+    } else if (self.segmentedControl.selectedSegmentIndex == 1){
+        self.rewardedAd = [MARewardedAd sharedWithAdUnitIdentifier: kRewardedZone2];
+    }
+    self.rewardedAd.delegate = self;
+    [self.rewardedAd loadAd];
+
 }
 
 - (void)showRewardedAd
 {
+    if ( [self.rewardedAd isReady] )
+    {
+        [self.rewardedAd showAd];
+    }
+
+    /*
     if (self.segmentedControl.selectedSegmentIndex == 0){
         if ( self.incentivizedInterstitialZone1.isReadyForDisplay ){
             // Optional: Assign delegates
@@ -65,82 +85,83 @@ static NSString *const kRewardedZone2 = @"58132605377038a3";
             [self loadRewardedAd];
         }
     }
+     */
 }
 
-#pragma mark - Ad Load Delegate
-
-- (void)adService:(nonnull ALAdService *)adService didLoadAd:(nonnull ALAd *)ad
-{
-    NSLog(@"%s with ZoneId : %@", __PRETTY_FUNCTION__,ad.zoneIdentifier);
-    [self popUpWithMessage:[NSString stringWithFormat:@"%s with ZoneId : %@",_cmd,ad.zoneIdentifier]];
-}
-
-- (void)adService:(nonnull ALAdService *)adService didFailToLoadAdWithError:(int)code
-{
-    NSLog(@"%s  %d", __PRETTY_FUNCTION__,code);
-    [self popUpWithMessage:[NSString stringWithFormat:@"%s error code: %d ",_cmd, code]];
-}
-
-#pragma mark - Ad Reward Delegate
-
-- (void)rewardValidationRequestForAd:(ALAd *)ad didSucceedWithResponse:(NSDictionary *)response
-{
-    NSString *currencyName = response[@"currency"];
-    NSString *amountGivenString = response[@"amount"];
-    NSNumber *amountGiven = @([amountGivenString floatValue]);
-    
-    NSLog(@"%s : %@ %@", __PRETTY_FUNCTION__,amountGiven, currencyName);
-    [self popUpWithMessage:[NSString stringWithFormat:@"%s : %@ %@",_cmd,amountGiven, currencyName]];
-}
-
-- (void)rewardValidationRequestForAd:(ALAd *)ad didFailWithError:(NSInteger)responseCode
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [self popUpWithMessage:[NSString stringWithFormat:@"%s with error code: %d ",_cmd,responseCode]];
-}
-
-- (void)rewardValidationRequestForAd:(ALAd *)ad didExceedQuotaWithResponse:(NSDictionary *)response
-{
-    NSLog(@"%s : %@", __PRETTY_FUNCTION__,response);
-
-}
-
-- (void)rewardValidationRequestForAd:(ALAd *)ad wasRejectedWithResponse:(NSDictionary *)response
-{
-    NSLog(@"%s : %@", __PRETTY_FUNCTION__,response);
-}
-
-- (void)userDeclinedToViewAd:(ALAd *)ad
-{
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-#pragma mark - Ad Display Delegate
-
-- (void)ad:(ALAd *)ad wasDisplayedIn:(UIView *)view
-{
-    NSLog( @"Ad Displayed");
-}
-
-- (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view
-{
-    NSLog( @"Ad Dismissed");
-}
-
-- (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view
-{
-    NSLog( @"Ad Clicked");
-}
-
-#pragma mark - Ad Video Playback Delegate
-
-- (void)videoPlaybackBeganInAd:(ALAd *)ad {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-}
-
-- (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
-    NSLog(@"%s atPlaybackPercent:%d", __PRETTY_FUNCTION__,percentPlayed);
-}
+//#pragma mark - Ad Load Delegate
+//
+//- (void)adService:(nonnull ALAdService *)adService didLoadAd:(nonnull ALAd *)ad
+//{
+//    NSLog(@"%s with ZoneId : %@", __PRETTY_FUNCTION__,ad.zoneIdentifier);
+//    [self popUpWithMessage:[NSString stringWithFormat:@"%s with ZoneId : %@",_cmd,ad.zoneIdentifier]];
+//}
+//
+//- (void)adService:(nonnull ALAdService *)adService didFailToLoadAdWithError:(int)code
+//{
+//    NSLog(@"%s  %d", __PRETTY_FUNCTION__,code);
+//    [self popUpWithMessage:[NSString stringWithFormat:@"%s error code: %d ",_cmd, code]];
+//}
+//
+//#pragma mark - Ad Reward Delegate
+//
+//- (void)rewardValidationRequestForAd:(ALAd *)ad didSucceedWithResponse:(NSDictionary *)response
+//{
+//    NSString *currencyName = response[@"currency"];
+//    NSString *amountGivenString = response[@"amount"];
+//    NSNumber *amountGiven = @([amountGivenString floatValue]);
+//
+//    NSLog(@"%s : %@ %@", __PRETTY_FUNCTION__,amountGiven, currencyName);
+//    [self popUpWithMessage:[NSString stringWithFormat:@"%s : %@ %@",_cmd,amountGiven, currencyName]];
+//}
+//
+//- (void)rewardValidationRequestForAd:(ALAd *)ad didFailWithError:(NSInteger)responseCode
+//{
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    [self popUpWithMessage:[NSString stringWithFormat:@"%s with error code: %d ",_cmd,responseCode]];
+//}
+//
+//- (void)rewardValidationRequestForAd:(ALAd *)ad didExceedQuotaWithResponse:(NSDictionary *)response
+//{
+//    NSLog(@"%s : %@", __PRETTY_FUNCTION__,response);
+//
+//}
+//
+//- (void)rewardValidationRequestForAd:(ALAd *)ad wasRejectedWithResponse:(NSDictionary *)response
+//{
+//    NSLog(@"%s : %@", __PRETTY_FUNCTION__,response);
+//}
+//
+//- (void)userDeclinedToViewAd:(ALAd *)ad
+//{
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//#pragma mark - Ad Display Delegate
+//
+//- (void)ad:(ALAd *)ad wasDisplayedIn:(UIView *)view
+//{
+//    NSLog( @"Ad Displayed");
+//}
+//
+//- (void)ad:(ALAd *)ad wasHiddenIn:(UIView *)view
+//{
+//    NSLog( @"Ad Dismissed");
+//}
+//
+//- (void)ad:(ALAd *)ad wasClickedIn:(UIView *)view
+//{
+//    NSLog( @"Ad Clicked");
+//}
+//
+//#pragma mark - Ad Video Playback Delegate
+//
+//- (void)videoPlaybackBeganInAd:(ALAd *)ad {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
+//}
+//
+//- (void)videoPlaybackEndedInAd:(ALAd *)ad atPlaybackPercent:(NSNumber *)percentPlayed fullyWatched:(BOOL)wasFullyWatched {
+//    NSLog(@"%s atPlaybackPercent:%d", __PRETTY_FUNCTION__,percentPlayed);
+//}
 
 /*
 #pragma mark - Navigation
@@ -171,6 +192,47 @@ static NSString *const kRewardedZone2 = @"58132605377038a3";
     
     [alert addAction:okButton];
     [self presentViewController:alert animated:YES completion:nil];
+}
+#pragma mark - MAAdDelegate Protocol
+
+- (void)didLoadAd:(MAAd *)ad
+{
+    // Rewarded ad is ready to be shown. '[self.rewardedAd isReady]' will now return 'YES'
+}
+
+- (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode
+{
+    // Rewarded ad failed to load. We recommend re-trying loading the ad in 5 seconds.
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self.rewardedAd loadAd];
+    });
+}
+
+- (void)didDisplayAd:(MAAd *)ad {}
+
+- (void)didClickAd:(MAAd *)ad {}
+
+- (void)didHideAd:(MAAd *)ad
+{
+    // Rewarded ad is hidden. Pre-load the next ad
+    [self.rewardedAd loadAd];
+}
+
+- (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode
+{
+    // Rewarded ad failed to display. We recommend loading the next ad
+    [self.rewardedAd loadAd];
+}
+
+#pragma mark - MARewardedAdDelegate Protocol
+
+- (void)didStartRewardedVideoForAd:(MAAd *)ad {}
+
+- (void)didCompleteRewardedVideoForAd:(MAAd *)ad {}
+
+- (void)didRewardUserForAd:(MAAd *)ad withReward:(MAReward *)reward
+{
+    // Rewarded ad was displayed and user should receive the reward
 }
 
 @end

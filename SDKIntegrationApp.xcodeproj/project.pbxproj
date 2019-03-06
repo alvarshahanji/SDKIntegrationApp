@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28AA40E8E987D35F1B601E8B /* libPods-SDKIntegrationAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A0C7B4A91A65DD20A3C277 /* libPods-SDKIntegrationAppTests.a */; };
+		47575353F8CBACFA6FE1183A /* libPods-SDKIntegrationApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B15115E70AAE1EF208DB7D58 /* libPods-SDKIntegrationApp.a */; };
 		566F221921EC059200FAE52E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F221821EC059200FAE52E /* AppDelegate.m */; };
 		566F221C21EC059200FAE52E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F221B21EC059200FAE52E /* ViewController.m */; };
 		566F221F21EC059200FAE52E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 566F221D21EC059200FAE52E /* Main.storyboard */; };
@@ -19,8 +19,20 @@
 		566F224B21EC646A00FAE52E /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F224A21EC646A00FAE52E /* BannerViewController.m */; };
 		566F225121EC64B700FAE52E /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F225021EC64B700FAE52E /* InterstitialViewController.m */; };
 		566F225421EC64CB00FAE52E /* RewardedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F225321EC64CB00FAE52E /* RewardedViewController.m */; };
-		B7E3E6C698615A38D6D41169 /* libPods-SDKIntegrationAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D311BE44D6A5CC1A3F87DC6 /* libPods-SDKIntegrationAppUITests.a */; };
-		DDFAED128D36B1126638D69F /* libPods-SDKIntegrationApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4F857F6C4DFBFE07F7932C /* libPods-SDKIntegrationApp.a */; };
+		5C7A25DDFD90AC2F0AC9337C /* libPods-SDKIntegrationAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEDC4E8172ADEA080823988 /* libPods-SDKIntegrationAppTests.a */; };
+		5E70655FA9ABE189A8B48DEF /* libPods-SDKIntegrationAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C8A164520C3D0278DC7468 /* libPods-SDKIntegrationAppUITests.a */; };
+		E52B55DC222EEF7C00BBF175 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DB222EEF7C00BBF175 /* AdSupport.framework */; };
+		E52B55DE222EEF9200BBF175 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DD222EEF9200BBF175 /* AVFoundation.framework */; };
+		E52B55E0222EEF9F00BBF175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DF222EEF9F00BBF175 /* CoreGraphics.framework */; };
+		E52B55E2222EEFB400BBF175 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55E1222EEFB400BBF175 /* CoreMedia.framework */; };
+		E52B55E4222EEFCC00BBF175 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55E3222EEFCC00BBF175 /* CoreTelephony.framework */; };
+		E52B55E6222EEFD300BBF175 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55E5222EEFD300BBF175 /* SafariServices.framework */; };
+		E52B55E8222EEFDF00BBF175 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55E7222EEFDF00BBF175 /* StoreKit.framework */; };
+		E52B55EA222EEFE800BBF175 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55E9222EEFE800BBF175 /* SystemConfiguration.framework */; };
+		E52B55EC222EEFF000BBF175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55EB222EEFF000BBF175 /* UIKit.framework */; };
+		E52B55EE222EEFF600BBF175 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55ED222EEFF600BBF175 /* WebKit.framework */; };
+		E52B55F0222EF00600BBF175 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55EF222EF00600BBF175 /* libz.tbd */; };
+		E5D89B00222F4D0500BE698C /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2AEBA8E782B073BFC3494C23 /* Pods-SDKIntegrationAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationAppUITests/Pods-SDKIntegrationAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		365C5B02E8F4D0CD697CE1D2 /* Pods-SDKIntegrationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationApp/Pods-SDKIntegrationApp.release.xcconfig"; sourceTree = "<group>"; };
-		42A0C7B4A91A65DD20A3C277 /* libPods-SDKIntegrationAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		206A76DCFC5A7A6426D4AFDA /* Pods-SDKIntegrationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationApp.debug.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationApp/Pods-SDKIntegrationApp.debug.xcconfig"; sourceTree = "<group>"; };
+		21213BF6528E6E620256D984 /* Pods-SDKIntegrationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationApp.release.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationApp/Pods-SDKIntegrationApp.release.xcconfig"; sourceTree = "<group>"; };
+		37667F803AEF32497275899E /* Pods-SDKIntegrationAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppTests/Pods-SDKIntegrationAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4DEDC4E8172ADEA080823988 /* libPods-SDKIntegrationAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		566F221421EC059200FAE52E /* SDKIntegrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDKIntegrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		566F221721EC059200FAE52E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		566F221821EC059200FAE52E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -66,12 +79,23 @@
 		566F225021EC64B700FAE52E /* InterstitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterstitialViewController.m; sourceTree = "<group>"; };
 		566F225221EC64CB00FAE52E /* RewardedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RewardedViewController.h; sourceTree = "<group>"; };
 		566F225321EC64CB00FAE52E /* RewardedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RewardedViewController.m; sourceTree = "<group>"; };
-		574760B9F0FE6A9687781EE8 /* Pods-SDKIntegrationAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationAppTests/Pods-SDKIntegrationAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D311BE44D6A5CC1A3F87DC6 /* libPods-SDKIntegrationAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E6F96D8A41D58AAE38E998C /* Pods-SDKIntegrationAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationAppUITests/Pods-SDKIntegrationAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		86A8A4EF2CD86957A925CB6D /* Pods-SDKIntegrationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationApp/Pods-SDKIntegrationApp.debug.xcconfig"; sourceTree = "<group>"; };
-		8C4F857F6C4DFBFE07F7932C /* libPods-SDKIntegrationApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E24503DCB43C6EBE1B37CA7B /* Pods-SDKIntegrationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDKIntegrationAppTests/Pods-SDKIntegrationAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		63C8A164520C3D0278DC7468 /* libPods-SDKIntegrationAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E673A84AFD37C4B37A22F8D /* Pods-SDKIntegrationAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppUITests/Pods-SDKIntegrationAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACA17A76DAFE3B795C11C75D /* Pods-SDKIntegrationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppTests.release.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppTests/Pods-SDKIntegrationAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		B15115E70AAE1EF208DB7D58 /* libPods-SDKIntegrationApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SDKIntegrationApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B24F76FE744D2A8BE05453 /* Pods-SDKIntegrationAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppUITests/Pods-SDKIntegrationAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E52B55DB222EEF7C00BBF175 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		E52B55DD222EEF9200BBF175 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E52B55DF222EEF9F00BBF175 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E52B55E1222EEFB400BBF175 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E52B55E3222EEFCC00BBF175 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		E52B55E5222EEFD300BBF175 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		E52B55E7222EEFDF00BBF175 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E52B55E9222EEFE800BBF175 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E52B55EB222EEFF000BBF175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E52B55ED222EEFF600BBF175 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		E52B55EF222EF00600BBF175 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +103,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDFAED128D36B1126638D69F /* libPods-SDKIntegrationApp.a in Frameworks */,
+				E5D89B00222F4D0500BE698C /* AppLovinSDK.framework in Frameworks */,
+				E52B55F0222EF00600BBF175 /* libz.tbd in Frameworks */,
+				E52B55EE222EEFF600BBF175 /* WebKit.framework in Frameworks */,
+				E52B55EC222EEFF000BBF175 /* UIKit.framework in Frameworks */,
+				E52B55EA222EEFE800BBF175 /* SystemConfiguration.framework in Frameworks */,
+				E52B55E8222EEFDF00BBF175 /* StoreKit.framework in Frameworks */,
+				E52B55E6222EEFD300BBF175 /* SafariServices.framework in Frameworks */,
+				E52B55E4222EEFCC00BBF175 /* CoreTelephony.framework in Frameworks */,
+				E52B55E2222EEFB400BBF175 /* CoreMedia.framework in Frameworks */,
+				E52B55E0222EEF9F00BBF175 /* CoreGraphics.framework in Frameworks */,
+				E52B55DE222EEF9200BBF175 /* AVFoundation.framework in Frameworks */,
+				E52B55DC222EEF7C00BBF175 /* AdSupport.framework in Frameworks */,
+				47575353F8CBACFA6FE1183A /* libPods-SDKIntegrationApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AA40E8E987D35F1B601E8B /* libPods-SDKIntegrationAppTests.a in Frameworks */,
+				5C7A25DDFD90AC2F0AC9337C /* libPods-SDKIntegrationAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7E3E6C698615A38D6D41169 /* libPods-SDKIntegrationAppUITests.a in Frameworks */,
+				5E70655FA9ABE189A8B48DEF /* libPods-SDKIntegrationAppUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,9 +141,21 @@
 		2FC324E27E49F5F81EB1B1D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8C4F857F6C4DFBFE07F7932C /* libPods-SDKIntegrationApp.a */,
-				42A0C7B4A91A65DD20A3C277 /* libPods-SDKIntegrationAppTests.a */,
-				5D311BE44D6A5CC1A3F87DC6 /* libPods-SDKIntegrationAppUITests.a */,
+				E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */,
+				E52B55EF222EF00600BBF175 /* libz.tbd */,
+				E52B55ED222EEFF600BBF175 /* WebKit.framework */,
+				E52B55EB222EEFF000BBF175 /* UIKit.framework */,
+				E52B55E9222EEFE800BBF175 /* SystemConfiguration.framework */,
+				E52B55E7222EEFDF00BBF175 /* StoreKit.framework */,
+				E52B55E5222EEFD300BBF175 /* SafariServices.framework */,
+				E52B55E3222EEFCC00BBF175 /* CoreTelephony.framework */,
+				E52B55E1222EEFB400BBF175 /* CoreMedia.framework */,
+				E52B55DF222EEF9F00BBF175 /* CoreGraphics.framework */,
+				E52B55DD222EEF9200BBF175 /* AVFoundation.framework */,
+				E52B55DB222EEF7C00BBF175 /* AdSupport.framework */,
+				B15115E70AAE1EF208DB7D58 /* libPods-SDKIntegrationApp.a */,
+				4DEDC4E8172ADEA080823988 /* libPods-SDKIntegrationAppTests.a */,
+				63C8A164520C3D0278DC7468 /* libPods-SDKIntegrationAppUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,8 +167,8 @@
 				566F222F21EC059300FAE52E /* SDKIntegrationAppTests */,
 				566F223A21EC059300FAE52E /* SDKIntegrationAppUITests */,
 				566F221521EC059200FAE52E /* Products */,
-				7270251E1E6E04029E3F711C /* Pods */,
 				2FC324E27E49F5F81EB1B1D0 /* Frameworks */,
+				736451C73D1B82E18C34DD87 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,17 +222,18 @@
 			path = SDKIntegrationAppUITests;
 			sourceTree = "<group>";
 		};
-		7270251E1E6E04029E3F711C /* Pods */ = {
+		736451C73D1B82E18C34DD87 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				86A8A4EF2CD86957A925CB6D /* Pods-SDKIntegrationApp.debug.xcconfig */,
-				365C5B02E8F4D0CD697CE1D2 /* Pods-SDKIntegrationApp.release.xcconfig */,
-				574760B9F0FE6A9687781EE8 /* Pods-SDKIntegrationAppTests.debug.xcconfig */,
-				E24503DCB43C6EBE1B37CA7B /* Pods-SDKIntegrationAppTests.release.xcconfig */,
-				2AEBA8E782B073BFC3494C23 /* Pods-SDKIntegrationAppUITests.debug.xcconfig */,
-				6E6F96D8A41D58AAE38E998C /* Pods-SDKIntegrationAppUITests.release.xcconfig */,
+				206A76DCFC5A7A6426D4AFDA /* Pods-SDKIntegrationApp.debug.xcconfig */,
+				21213BF6528E6E620256D984 /* Pods-SDKIntegrationApp.release.xcconfig */,
+				37667F803AEF32497275899E /* Pods-SDKIntegrationAppTests.debug.xcconfig */,
+				ACA17A76DAFE3B795C11C75D /* Pods-SDKIntegrationAppTests.release.xcconfig */,
+				8E673A84AFD37C4B37A22F8D /* Pods-SDKIntegrationAppUITests.debug.xcconfig */,
+				D4B24F76FE744D2A8BE05453 /* Pods-SDKIntegrationAppUITests.release.xcconfig */,
 			);
 			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,17 +600,22 @@
 		};
 		566F224121EC059300FAE52E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86A8A4EF2CD86957A925CB6D /* Pods-SDKIntegrationApp.debug.xcconfig */;
+			baseConfigurationReference = 206A76DCFC5A7A6426D4AFDA /* Pods-SDKIntegrationApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LV57V9DT4F;
+				DEVELOPMENT_TEAM = 7WXN7X228H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SDKIntegrationApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vungle.SDKIntegrationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.7minutegames.Solitaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -569,17 +623,22 @@
 		};
 		566F224221EC059300FAE52E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 365C5B02E8F4D0CD697CE1D2 /* Pods-SDKIntegrationApp.release.xcconfig */;
+			baseConfigurationReference = 21213BF6528E6E620256D984 /* Pods-SDKIntegrationApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LV57V9DT4F;
+				DEVELOPMENT_TEAM = 7WXN7X228H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SDKIntegrationApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vungle.SDKIntegrationApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.7minutegames.Solitaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,7 +646,7 @@
 		};
 		566F224421EC059300FAE52E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 574760B9F0FE6A9687781EE8 /* Pods-SDKIntegrationAppTests.debug.xcconfig */;
+			baseConfigurationReference = 37667F803AEF32497275899E /* Pods-SDKIntegrationAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -607,7 +666,7 @@
 		};
 		566F224521EC059300FAE52E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E24503DCB43C6EBE1B37CA7B /* Pods-SDKIntegrationAppTests.release.xcconfig */;
+			baseConfigurationReference = ACA17A76DAFE3B795C11C75D /* Pods-SDKIntegrationAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -627,7 +686,7 @@
 		};
 		566F224721EC059300FAE52E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AEBA8E782B073BFC3494C23 /* Pods-SDKIntegrationAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 8E673A84AFD37C4B37A22F8D /* Pods-SDKIntegrationAppUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV57V9DT4F;
@@ -646,7 +705,7 @@
 		};
 		566F224821EC059300FAE52E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E6F96D8A41D58AAE38E998C /* Pods-SDKIntegrationAppUITests.release.xcconfig */;
+			baseConfigurationReference = D4B24F76FE744D2A8BE05453 /* Pods-SDKIntegrationAppUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LV57V9DT4F;

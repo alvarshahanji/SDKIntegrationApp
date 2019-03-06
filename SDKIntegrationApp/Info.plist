@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AppLovinSdkKey</key>
-	<string>lCEBkvT0elDFwWMMLkZEBRS8Brhn0TT2uax8r0N0MMLgnyntdtlA_IRHK5P73ghTe9ky8u4veFv4syORzxPBi2</string>
+	<string>05TMDQ5tZabpXQ45_UTbmEGNUtVAzSTzT6KmWQc5_CuWdzccS4DCITZoL3yIWUG3bbq60QC_d4WF28tUC4gVTF</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>3.8.3</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
