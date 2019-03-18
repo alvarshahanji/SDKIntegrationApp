@@ -1,16 +1,144 @@
 PODS:
-  - AppLovinSDK (5.1.2)
+  - AmazonAd (2.2.17.0)
+  - AppLovinMediationAmazonAdapter (2.2.17.0.1):
+    - AmazonAd (= 2.2.17.0)
+    - AppLovinSDK (>= 6.0.0)
+  - AppLovinMediationByteDanceAdapter (1.9.8.5.0):
+    - AppLovinSDK (>= 6.0.0)
+    - Bytedance-UnionAD (= 1.9.8.5.0)
+  - AppLovinMediationChartboostAdapter (7.3.1.0):
+    - AppLovinSDK (>= 6.1.0)
+    - ChartboostSDK (= 7.3.0)
+  - AppLovinMediationFacebookAdapter (5.2.0.1):
+    - AppLovinSDK (>= 6.0.0)
+    - FBAudienceNetwork (= 5.2.0)
+  - AppLovinMediationFyberAdapter (7.2.1.0):
+    - AppLovinSDK (>= 6.1.0)
+    - InneractiveSDK (= 7.1.1)
+  - AppLovinMediationGoogleAdapter (7.40.0.0):
+    - AppLovinSDK (>= 6.0.0)
+    - Google-Mobile-Ads-SDK (= 7.36.0)
+  - AppLovinMediationInMobiAdapter (7.2.7.1):
+    - AppLovinSDK (>= 6.0.0)
+    - InMobiSDK (= 7.2.7)
+  - AppLovinMediationIronSourceAdapter (6.8.1.0.0):
+    - AppLovinSDK (>= 6.0.0)
+    - IronSourceSDK (= 6.8.1.0)
+  - AppLovinMediationMintegralAdapter (4.9.4.0):
+    - AppLovinSDK (>= 6.1.0)
+    - MintegralSDK (= 4.9.4.0)
+  - AppLovinMediationMoPubAdapter (5.5.0.1):
+    - AppLovinSDK (>= 6.0.0)
+    - mopub-ios-sdk (= 5.5.0)
+  - AppLovinMediationTapjoyAdapter (12.2.0.1):
+    - AppLovinSDK (>= 6.0.0)
+    - TapjoySDK (= 12.2.0)
+  - AppLovinMediationUnityAdsAdapter (3.0.0.0):
+    - AppLovinSDK (>= 6.1.0)
+    - UnityAds (= 3.0.0)
+  - AppLovinMediationVungleAdapter (6.3.2.0):
+    - AppLovinSDK (>= 6.1.0)
+    - VungleSDK-iOS (= 6.3.2.0)
+  - AppLovinSDK (6.3.0)
+  - Bytedance-UnionAD (1.9.8.5)
+  - ChartboostSDK (7.3.0)
+  - FBAudienceNetwork (5.2.0)
+  - Google-Mobile-Ads-SDK (7.36.0)
+  - InMobiSDK (7.2.7)
+  - InneractiveSDK (7.1.1)
+  - IronSourceSDK (6.8.1.0)
+  - MintegralSDK (4.9.4)
+  - mopub-ios-sdk (5.5.0):
+    - mopub-ios-sdk/MoPubSDK (= 5.5.0)
+  - mopub-ios-sdk/Avid (5.5.0):
+    - mopub-ios-sdk/Core
+  - mopub-ios-sdk/Core (5.5.0)
+  - mopub-ios-sdk/Moat (5.5.0):
+    - mopub-ios-sdk/Core
+  - mopub-ios-sdk/MoPubSDK (5.5.0):
+    - mopub-ios-sdk/Avid
+    - mopub-ios-sdk/Core
+    - mopub-ios-sdk/Moat
+  - TapjoySDK (12.2.0)
+  - UnityAds (3.0.0)
+  - VungleSDK-iOS (6.3.2)
 
 DEPENDENCIES:
+  - AppLovinMediationAmazonAdapter
+  - AppLovinMediationByteDanceAdapter
+  - AppLovinMediationChartboostAdapter
+  - AppLovinMediationFacebookAdapter
+  - AppLovinMediationFyberAdapter
+  - AppLovinMediationGoogleAdapter
+  - AppLovinMediationInMobiAdapter
+  - AppLovinMediationIronSourceAdapter
+  - AppLovinMediationMintegralAdapter
+  - AppLovinMediationMoPubAdapter
+  - AppLovinMediationTapjoyAdapter
+  - AppLovinMediationUnityAdsAdapter
+  - AppLovinMediationVungleAdapter
   - AppLovinSDK
 
 SPEC REPOS:
+  https://github.com/AppLovin/Public-Cocoapods-Specs.git:
+    - AmazonAd
+    - AppLovinMediationAmazonAdapter
+    - AppLovinMediationFyberAdapter
+    - AppLovinMediationMintegralAdapter
+    - InneractiveSDK
+    - MintegralSDK
   https://github.com/cocoapods/specs.git:
+    - AppLovinMediationByteDanceAdapter
+    - AppLovinMediationChartboostAdapter
+    - AppLovinMediationFacebookAdapter
+    - AppLovinMediationGoogleAdapter
+    - AppLovinMediationInMobiAdapter
+    - AppLovinMediationIronSourceAdapter
+    - AppLovinMediationMoPubAdapter
+    - AppLovinMediationTapjoyAdapter
+    - AppLovinMediationUnityAdsAdapter
+    - AppLovinMediationVungleAdapter
     - AppLovinSDK
+    - Bytedance-UnionAD
+    - ChartboostSDK
+    - FBAudienceNetwork
+    - Google-Mobile-Ads-SDK
+    - InMobiSDK
+    - IronSourceSDK
+    - mopub-ios-sdk
+    - TapjoySDK
+    - UnityAds
+    - VungleSDK-iOS
 
 SPEC CHECKSUMS:
-  AppLovinSDK: 5a6c0ab59aaed00da1bc95d54e2065266ab3b379
+  AmazonAd: ba75d8331563c782fb90463725b72cc95ec33c01
+  AppLovinMediationAmazonAdapter: 67c50448dd6b0e42c7686fe533b782fbe31a5ee9
+  AppLovinMediationByteDanceAdapter: 02abaf1dacebad7a83dd266019f894119962ce22
+  AppLovinMediationChartboostAdapter: c1aaad495f5e356ebccc7231b6f0ab49c1533ccf
+  AppLovinMediationFacebookAdapter: 0969c80e227d4f0317c93ce16af8ed1aeecbdca1
+  AppLovinMediationFyberAdapter: 0e73db4b531bac6c51c2abe7113a3be48e2e8271
+  AppLovinMediationGoogleAdapter: da988acf36867afe150ae9456dd430370a95d16a
+  AppLovinMediationInMobiAdapter: c1379050a40e2a43db8de6f2cd64a5c1e86cb9d5
+  AppLovinMediationIronSourceAdapter: 4f21a89d0ceaaceb9f7b9cfd3573edd18aa7e94a
+  AppLovinMediationMintegralAdapter: 3d207f14896c516fb192585afc16119418fc7de9
+  AppLovinMediationMoPubAdapter: a52515b04b9676a1107c45421d72344441171c6e
+  AppLovinMediationTapjoyAdapter: 26e6d184d20d54cace9e84481ffae2155b4d3194
+  AppLovinMediationUnityAdsAdapter: 5c5645ccf7588f9d0fa149161afabaafd8f8caeb
+  AppLovinMediationVungleAdapter: f00e881cdba59a8c278e7ed4e98ba3cd2a40ed46
+  AppLovinSDK: 14ed4815dcf71cfe75ec43ca2ce60cce0652af7d
+  Bytedance-UnionAD: a977fe9f56cd0832ea2e0c88ed9944f560e52935
+  ChartboostSDK: 63bbdcad37dd78012acaba1f904e82ddb0eb921d
+  FBAudienceNetwork: 43eadf7ab00fe58a66ca52171de324e25a0a4a1c
+  Google-Mobile-Ads-SDK: 5bb4d2cea811842e104a24780caef63b4808e1bd
+  InMobiSDK: 4d9e780f606184339f47b81b57cc89a376487179
+  InneractiveSDK: a426a5fb0faf7ec16a21ef5585f4dfcf94d6ac9a
+  IronSourceSDK: 9547ce35754d966e9f72d49b02f97631df51605e
+  MintegralSDK: 78e55ec34e6d0658bfb6b06bff5aed650a49b7f3
+  mopub-ios-sdk: 937b82dd76d8a396ba6a22ae005a1e24c61bf28b
+  TapjoySDK: f5b3711c12205bbfbda3b95179072c8a9b5fcf09
+  UnityAds: ff7c0f477873f40daccd7c0bd0b656cb6cf5a2e5
+  VungleSDK-iOS: 69a7f407b60281d2954ffc5eeeac349fbfed51d6
 
-PODFILE CHECKSUM: aadfa9d66fe9de0692d4fab9ad5ebc921a1a696c
+PODFILE CHECKSUM: e359ceb7f3335880eec8be886e4421340a4441b8
 
 COCOAPODS: 1.6.1
