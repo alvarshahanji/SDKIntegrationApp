@@ -9,8 +9,8 @@
 #import "RewardedViewController.h"
 #import <AppLovinSDK/AppLovinSDK.h>
 
-static NSString *const kRewardedZone1 = @"IOS_REWARDED_AD_UNIT_ID";
-static NSString *const kRewardedZone2 = @"IOS_REWARDED_AD_UNIT_ID";
+static NSString *const kRewardedZone1 = @"REWARD_AD_UNIT_ID";
+static NSString *const kRewardedZone2 = @"REWARD_AD_UNIT_ID";
 
 //@interface RewardedViewController ()<ALAdLoadDelegate, ALAdRewardDelegate, ALAdDisplayDelegate, ALAdVideoPlaybackDelegate>
 ////@property (nonatomic, strong) ALAd *ad;
@@ -197,42 +197,47 @@ static NSString *const kRewardedZone2 = @"IOS_REWARDED_AD_UNIT_ID";
 
 - (void)didLoadAd:(MAAd *)ad
 {
+    NSLog(@"ALMediationAdapterWrapper : didLoadAd");
     // Rewarded ad is ready to be shown. '[self.rewardedAd isReady]' will now return 'YES'
 }
 
 - (void)didFailToLoadAdForAdUnitIdentifier:(NSString *)adUnitIdentifier withErrorCode:(NSInteger)errorCode
 {
-    // Rewarded ad failed to load. We recommend re-trying loading the ad in 5 seconds.
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [self.rewardedAd loadAd];
-    });
+    NSLog(@"ALMediationAdapterWrapper : didFailToLoadAdForAdUnitIdentifier");
+
 }
 
-- (void)didDisplayAd:(MAAd *)ad {}
+- (void)didDisplayAd:(MAAd *)ad {
+    NSLog(@"ALMediationAdapterWrapper : didDisplayAd");
+}
 
-- (void)didClickAd:(MAAd *)ad {}
+- (void)didClickAd:(MAAd *)ad {
+    NSLog(@"ALMediationAdapterWrapper : didClickAd");
+}
 
 - (void)didHideAd:(MAAd *)ad
 {
-    // Rewarded ad is hidden. Pre-load the next ad
-    [self.rewardedAd loadAd];
+    NSLog(@"ALMediationAdapterWrapper : didHideAd");
 }
 
 - (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode
 {
-    // Rewarded ad failed to display. We recommend loading the next ad
-    [self.rewardedAd loadAd];
+    NSLog(@"ALMediationAdapterWrapper : didFailToDisplayAd");
 }
 
 #pragma mark - MARewardedAdDelegate Protocol
 
-- (void)didStartRewardedVideoForAd:(MAAd *)ad {}
+- (void)didStartRewardedVideoForAd:(MAAd *)ad {
+    NSLog(@"ALMediationAdapterWrapper : didStartRewardedVideoForAd");
+}
 
-- (void)didCompleteRewardedVideoForAd:(MAAd *)ad {}
+- (void)didCompleteRewardedVideoForAd:(MAAd *)ad {
+    NSLog(@"ALMediationAdapterWrapper : didCompleteRewardedVideoForAd");
+}
 
 - (void)didRewardUserForAd:(MAAd *)ad withReward:(MAReward *)reward
 {
-    // Rewarded ad was displayed and user should receive the reward
+    NSLog(@"ALMediationAdapterWrapper : didRewardUserForAd");
 }
 
 @end

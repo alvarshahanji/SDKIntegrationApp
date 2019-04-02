@@ -20,7 +20,7 @@
 @implementation BannerViewController
 
 - (void)viewDidLoad {
-//    [super viewDidLoad];
+    [super viewDidLoad];
 //    self.adView = [[ALAdView alloc] initWithFrame: CGRectMake(10, 100, 320, 50)
 //                                        size: [ALAdSize sizeBanner]
 //                                         sdk: [ALSdk shared]];
@@ -33,17 +33,15 @@
     
     if ( UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone )
     {
-        self.adView.frame = CGRectMake(10, 20, 320, 50); // iPhone sizing is 320x50
+        self.adView.frame = CGRectMake(0, 100, 320, 60); // iPhone sizing is 320x50
     }
     else
     {
-        self.adView.frame = CGRectMake(10, 20, 728, 90); // iPad sizing is 728x90
+        self.adView.frame = CGRectMake(10, 100, 728, 90); // iPad sizing is 728x90
     }
     
-    [self.view addSubview: self.adView];
-    
     // Load the first ad
-    [self.adView loadAd];
+   
 }
 
 //
@@ -110,11 +108,11 @@
 //    [self popUpWithMessage:[NSString stringWithFormat:@"%s ",_cmd]];
 //}
 //
-//- (IBAction)loadBannerAd:(id)sender {
-//    [self.adView loadNextAd];
-//    [self.view addSubview: self.adView];
-//
-//}
+- (IBAction)loadBannerAd:(id)sender {
+    [self.adView loadAd];
+    self.adView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview: self.adView];
+}
 //
 //-(void) popUpWithMessage :(NSString *)msg{
 //    UIAlertController * alert = [UIAlertController
