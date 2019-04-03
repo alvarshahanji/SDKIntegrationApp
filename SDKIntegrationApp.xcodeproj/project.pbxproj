@@ -21,6 +21,7 @@
 		566F225121EC64B700FAE52E /* InterstitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F225021EC64B700FAE52E /* InterstitialViewController.m */; };
 		566F225421EC64CB00FAE52E /* RewardedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 566F225321EC64CB00FAE52E /* RewardedViewController.m */; };
 		C8AD7424E40520100F187DFC /* Pods_SDKIntegrationAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 647E80BECEC2A08DE96C7A51 /* Pods_SDKIntegrationAppUITests.framework */; };
+		E524557F2255554200EF921B /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E524557E2255554200EF921B /* AppLovinSDK.framework */; };
 		E52B55DC222EEF7C00BBF175 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DB222EEF7C00BBF175 /* AdSupport.framework */; };
 		E52B55DE222EEF9200BBF175 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DD222EEF9200BBF175 /* AVFoundation.framework */; };
 		E52B55E0222EEF9F00BBF175 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55DF222EEF9F00BBF175 /* CoreGraphics.framework */; };
@@ -32,7 +33,6 @@
 		E52B55EC222EEFF000BBF175 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55EB222EEFF000BBF175 /* UIKit.framework */; };
 		E52B55EE222EEFF600BBF175 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55ED222EEFF600BBF175 /* WebKit.framework */; };
 		E52B55F0222EF00600BBF175 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E52B55EF222EF00600BBF175 /* libz.tbd */; };
-		E5D89B00222F4D0500BE698C /* AppLovinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +84,7 @@
 		A77E928EE4A9297E42BB07A7 /* Pods_SDKIntegrationAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDKIntegrationAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACA17A76DAFE3B795C11C75D /* Pods-SDKIntegrationAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppTests.release.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppTests/Pods-SDKIntegrationAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4B24F76FE744D2A8BE05453 /* Pods-SDKIntegrationAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDKIntegrationAppUITests.release.xcconfig"; path = "Target Support Files/Pods-SDKIntegrationAppUITests/Pods-SDKIntegrationAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E524557E2255554200EF921B /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 		E52B55DB222EEF7C00BBF175 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		E52B55DD222EEF9200BBF175 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E52B55DF222EEF9F00BBF175 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -95,7 +96,6 @@
 		E52B55EB222EEFF000BBF175 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E52B55ED222EEFF600BBF175 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E52B55EF222EF00600BBF175 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppLovinSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5D89B00222F4D0500BE698C /* AppLovinSDK.framework in Frameworks */,
 				E52B55F0222EF00600BBF175 /* libz.tbd in Frameworks */,
 				E52B55EE222EEFF600BBF175 /* WebKit.framework in Frameworks */,
 				E52B55EC222EEFF000BBF175 /* UIKit.framework in Frameworks */,
@@ -111,6 +110,7 @@
 				E52B55E8222EEFDF00BBF175 /* StoreKit.framework in Frameworks */,
 				E52B55E6222EEFD300BBF175 /* SafariServices.framework in Frameworks */,
 				E52B55E4222EEFCC00BBF175 /* CoreTelephony.framework in Frameworks */,
+				E524557F2255554200EF921B /* AppLovinSDK.framework in Frameworks */,
 				E52B55E2222EEFB400BBF175 /* CoreMedia.framework in Frameworks */,
 				E52B55E0222EEF9F00BBF175 /* CoreGraphics.framework in Frameworks */,
 				E52B55DE222EEF9200BBF175 /* AVFoundation.framework in Frameworks */,
@@ -141,7 +141,7 @@
 		2FC324E27E49F5F81EB1B1D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E5D89AFF222F4D0500BE698C /* AppLovinSDK.framework */,
+				E524557E2255554200EF921B /* AppLovinSDK.framework */,
 				E52B55EF222EF00600BBF175 /* libz.tbd */,
 				E52B55ED222EEFF600BBF175 /* WebKit.framework */,
 				E52B55EB222EEFF000BBF175 /* UIKit.framework */,

@@ -129,7 +129,6 @@ static NSString *const kInterstitialZone2 = @"INTER_1";
 {
     // Interstitial ad failed to load. We recommend re-trying the load in 5 seconds
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        [self.interstitialAd loadAd];
     });
 }
 
@@ -140,13 +139,33 @@ static NSString *const kInterstitialZone2 = @"INTER_1";
 - (void)didHideAd:(MAAd *)ad
 {
     // Interstitial ad is hidden. Pre-load the next ad
-    [self.interstitialAd loadAd];
+\
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)didFailToDisplayAd:(MAAd *)ad withErrorCode:(NSInteger)errorCode
 {
     // Interstitial ad failed to display. We recommend loading the next ad
-    [self.interstitialAd loadAd];
 }
 
 /*
